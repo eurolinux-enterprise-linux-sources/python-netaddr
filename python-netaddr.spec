@@ -4,7 +4,7 @@
 
 Name:           python-netaddr
 Version:        0.7.5
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Pythonic manipulation of IPv4, IPv6, CIDR, EUI and MAC network addresses
 
 Group:          Development/Libraries
@@ -16,6 +16,7 @@ BuildRoot:      %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch:      noarch
 BuildRequires:  python-devel >= 2.4
 
+Patch0:         0001-Fixed-github-Issue-no.-2.-Thanks-keesbos.patch
 
 %description
 A pure Python network address representation and manipulation library.
@@ -51,6 +52,7 @@ For details on history changes and updates see the CHANGELOG :-
 
 %prep
 %setup -q -n netaddr-%{version}
+%patch0 -p1 -b .invalid_ip_network
 
 # Make rpmlint happy, get rid of DOS line endings
 %{__sed} -i 's/\r//' netaddr/*.py
@@ -90,6 +92,10 @@ rm -rf %{buildroot}
 %{_bindir}/netaddr
 
 %changelog
+* Wed Aug 3 2011 Jakub Hrozek <jhrozek@redhat.com> - 0.7.5-4
+- Do not traceback on invalid IPNetwork input
+- Resolves: rhbz#710373
+
 * Wed Jan 5 2010 Jakub Hrozek <jhrozek@redhat.com> - 0.7.5-3
 - Fix permissions on documentation files
 - Use correct upstream and source URLs
