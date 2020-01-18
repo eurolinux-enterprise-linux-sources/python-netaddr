@@ -4,7 +4,7 @@
 
 Name:           python-netaddr
 Version:        0.7.5
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        A pure Python network address representation and manipulation library
 
 Group:          Development/Libraries
@@ -89,6 +89,9 @@ rm -rf %{buildroot}
 %{_bindir}/netaddr
 
 %changelog
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 0.7.5-7
+- Mass rebuild 2013-12-27
+
 * Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.7.5-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
