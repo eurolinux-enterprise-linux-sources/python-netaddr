@@ -1,0 +1,24 @@
+From 163fe0eb38e56cfcfff01d1a940322af2bd86a87 Mon Sep 17 00:00:00 2001
+From: Kyle Maxwell <kmaxwell@verisign.com>
+Date: Tue, 24 Feb 2015 14:49:09 -0600
+Subject: [PATCH] Add range from RFC 6890
+
+---
+ netaddr/ip/__init__.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/netaddr/ip/__init__.py b/netaddr/ip/__init__.py
+index d5be23f9f4bfba1ec6c2c323418d535c0c8fdef1..c0bbbb563f6a03447dc7a7d6ce754dabcc499349 100644
+--- a/netaddr/ip/__init__.py
++++ b/netaddr/ip/__init__.py
+@@ -1907,6 +1907,7 @@ IPV4_PRIVATE = (
+     IPNetwork('10.0.0.0/8'),                    #   Private-Use Networks
+     IPNetwork('100.64.0.0/10'),                 #   Shared address space
+     IPNetwork('172.16.0.0/12'),                 #   Private-Use Networks
++    IPNetwork('192.0.0.0/24'),                  #   Test-Net
+     IPNetwork('192.0.2.0/24'),                  #   Test-Net
+     IPNetwork('192.168.0.0/16'),                #   Private-Use Networks
+     IPRange('239.0.0.0', '239.255.255.255'),    #   Administrative Multicast
+-- 
+2.9.5
+

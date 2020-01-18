@@ -1,0 +1,39 @@
+From 71349fb5b1bf67769d07fc7eca1922fb258722a9 Mon Sep 17 00:00:00 2001
+From: Kyle Maxwell <kmaxwell@verisign.com>
+Date: Tue, 24 Feb 2015 14:58:38 -0600
+Subject: [PATCH] Move some from IPV4_PRIVATE to IPV4_RESERVED
+
+---
+ netaddr/ip/__init__.py | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+diff --git a/netaddr/ip/__init__.py b/netaddr/ip/__init__.py
+index ac600121c161b147ca8df2db054272e37af79fb7..0f7a93e22c3f8d63842fd6cecedabd6564d711b3 100644
+--- a/netaddr/ip/__init__.py
++++ b/netaddr/ip/__init__.py
+@@ -1907,12 +1907,8 @@ IPV4_PRIVATE = (
+     IPNetwork('10.0.0.0/8'),                    #   Private-Use Networks
+     IPNetwork('100.64.0.0/10'),                 #   Shared address space
+     IPNetwork('172.16.0.0/12'),                 #   Private-Use Networks
+-    IPNetwork('192.0.0.0/24'),                  #   Test-Net
+     IPNetwork('192.0.2.0/24'),                  #   Test-Net
+     IPNetwork('192.168.0.0/16'),                #   Private-Use Networks
+-    IPNetwork('198.18.0.0/15'),                 #   Benchmarking
+-    IPNetwork('198.51.100.0/24'),               #   Examples for documentation
+-    IPNetwork('203.0.113.0/24'),                #   Examples for documentation
+     IPRange('239.0.0.0', '239.255.255.255'),    #   Administrative Multicast
+ )
+ 
+@@ -1925,6 +1921,9 @@ IPV4_6TO4 = IPNetwork('192.88.99.0/24')    #   6to4 Relay Anycast
+ IPV4_RESERVED = (
+     IPNetwork('192.0.0.0/24'),      #   Reserved but subject to allocation
+     IPNetwork('240.0.0.0/4'),       #   Reserved for Future Use
++    IPNetwork('198.18.0.0/15'),     #   Benchmarking
++    IPNetwork('198.51.100.0/24'),   #   Examples for documentation
++    IPNetwork('203.0.113.0/24'),    #   Examples for documentation
+ 
+     #   Reserved multicast
+     IPRange('234.0.0.0', '238.255.255.255'),
+-- 
+2.9.5
+

@@ -1,0 +1,25 @@
+From 400bba0ccafeb0de1148992df65f1dd6cdb0b3d8 Mon Sep 17 00:00:00 2001
+From: Kyle Maxwell <kmaxwell@verisign.com>
+Date: Tue, 24 Feb 2015 14:53:26 -0600
+Subject: [PATCH] Add range from RFC 5737
+
+---
+ netaddr/ip/__init__.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/netaddr/ip/__init__.py b/netaddr/ip/__init__.py
+index 5a6bd6b7812cf1d632cfbe80d1541dfcb72662de..ac600121c161b147ca8df2db054272e37af79fb7 100644
+--- a/netaddr/ip/__init__.py
++++ b/netaddr/ip/__init__.py
+@@ -1911,6 +1911,8 @@ IPV4_PRIVATE = (
+     IPNetwork('192.0.2.0/24'),                  #   Test-Net
+     IPNetwork('192.168.0.0/16'),                #   Private-Use Networks
+     IPNetwork('198.18.0.0/15'),                 #   Benchmarking
++    IPNetwork('198.51.100.0/24'),               #   Examples for documentation
++    IPNetwork('203.0.113.0/24'),                #   Examples for documentation
+     IPRange('239.0.0.0', '239.255.255.255'),    #   Administrative Multicast
+ )
+ 
+-- 
+2.9.5
+

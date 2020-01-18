@@ -1,0 +1,24 @@
+From 56d1a1a64a5f8159a127086a1f04dd7f6db5862d Mon Sep 17 00:00:00 2001
+From: Kyle Maxwell <kmaxwell@verisign.com>
+Date: Tue, 24 Feb 2015 14:46:34 -0600
+Subject: [PATCH] Add range from RFC 6598
+
+---
+ netaddr/ip/__init__.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/netaddr/ip/__init__.py b/netaddr/ip/__init__.py
+index 200753d9e73ecfad530044ce30e166b17d63b81c..d5be23f9f4bfba1ec6c2c323418d535c0c8fdef1 100644
+--- a/netaddr/ip/__init__.py
++++ b/netaddr/ip/__init__.py
+@@ -1905,6 +1905,7 @@ IPV4_LOOPBACK  = IPNetwork('127.0.0.0/8')
+ 
+ IPV4_PRIVATE = (
+     IPNetwork('10.0.0.0/8'),                    #   Private-Use Networks
++    IPNetwork('100.64.0.0/10'),                 #   Shared address space
+     IPNetwork('172.16.0.0/12'),                 #   Private-Use Networks
+     IPNetwork('192.0.2.0/24'),                  #   Test-Net
+     IPNetwork('192.168.0.0/16'),                #   Private-Use Networks
+-- 
+2.9.5
+

@@ -4,7 +4,7 @@
 
 Name:           python-netaddr
 Version:        0.7.5
-Release:        6%{?dist}
+Release:        9%{?dist}
 Summary:        A pure Python network address representation and manipulation library
 
 Group:          Development/Libraries
@@ -17,6 +17,14 @@ BuildArch:      noarch
 BuildRequires:  python-devel >= 2.4
 
 Patch0:         0001-Fixed-github-Issue-no.-2.-Thanks-keesbos.patch
+Patch1:         0002-Exclude-39.0.0.0-8-network-from-reserved-set.patch
+Patch2:         0003-Adapt-IPV4_RESERVED-according-to-RFC-5735-Appendix-A.patch
+Patch3:         0004-Add-range-from-RFC-6598.patch
+Patch4:         0005-Add-range-from-RFC-6890.patch
+Patch5:         0006-Add-range-from-RFC-2544.patch
+Patch6:         0007-Add-range-from-RFC-5737.patch
+Patch7:         0008-Move-some-from-IPV4_PRIVATE-to-IPV4_RESERVED.patch
+Patch8:         0009-Fixed-71.-Updated-IPv4-reserved-networks.patch
 
 
 %description
@@ -50,7 +58,16 @@ API documentation for the latest release is available here :-
 
 %prep
 %setup -q -n netaddr-%{version}
+
 %patch0 -p1 -b .invalid_ip_network
+%patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
+%patch5 -p1
+%patch6 -p1
+%patch7 -p1
+%patch8 -p1
 
 # Make rpmlint happy, get rid of DOS line endings
 %{__sed} -i 's/\r//' netaddr/*.py
@@ -89,6 +106,16 @@ rm -rf %{buildroot}
 %{_bindir}/netaddr
 
 %changelog
+* Thu Nov 2 2017 Pavel Vomacka <pvomacka@redhat.com> - 0.7.5-9
+- Adding commands to apply new patches added in previous release 0.7.5-8
+
+* Fri Oct 20 2017 Pavel Vomacka <pvomacka@redhat.com> - 0.7.5-8
+- Resolves: #1438668 DNS forwarder address added during IPA installation
+  shouldn't add IP-Address '0.0.0.0'
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 0.7.5-7
+- Mass rebuild 2013-12-27
+
 * Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.7.5-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 

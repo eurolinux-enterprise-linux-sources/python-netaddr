@@ -1,0 +1,24 @@
+From 4e64cbe22f61dc0aa9ef61b89975565440079aa1 Mon Sep 17 00:00:00 2001
+From: Kyle Maxwell <kmaxwell@verisign.com>
+Date: Tue, 24 Feb 2015 14:51:36 -0600
+Subject: [PATCH] Add range from RFC 2544
+
+---
+ netaddr/ip/__init__.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/netaddr/ip/__init__.py b/netaddr/ip/__init__.py
+index c0bbbb563f6a03447dc7a7d6ce754dabcc499349..5a6bd6b7812cf1d632cfbe80d1541dfcb72662de 100644
+--- a/netaddr/ip/__init__.py
++++ b/netaddr/ip/__init__.py
+@@ -1910,6 +1910,7 @@ IPV4_PRIVATE = (
+     IPNetwork('192.0.0.0/24'),                  #   Test-Net
+     IPNetwork('192.0.2.0/24'),                  #   Test-Net
+     IPNetwork('192.168.0.0/16'),                #   Private-Use Networks
++    IPNetwork('198.18.0.0/15'),                 #   Benchmarking
+     IPRange('239.0.0.0', '239.255.255.255'),    #   Administrative Multicast
+ )
+ 
+-- 
+2.9.5
+
